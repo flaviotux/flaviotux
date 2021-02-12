@@ -84,5 +84,14 @@ echo "Finishing ZSH"
 echo "============================="
 echo ""
 
+
 curl https://gist.githubusercontent.com/ribeirof7x/f53f1c67c8c27567f01456c3098bf27f/raw/89a29fb30e6f954cdb04d53e07943d5e685a8974/.zshrc > $HOME/.zshrc
+
+echo ""
+echo "============================="
+echo "Setting ZSH default shell"
+echo "============================="
+echo ""
+
+sudo sed -i "s/\/home\/flavioribeiro:\/bin\/bash/\/home\/flavioribeiro:\/bin\/zsh/" /etc/passwd
 zsh
