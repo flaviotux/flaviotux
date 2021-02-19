@@ -93,5 +93,5 @@ echo "Setting ZSH default shell"
 echo "============================="
 echo ""
 
-sudo sed -i "s/\/home\/flavioribeiro:\/bin\/bash/\/home\/flavioribeiro:\/bin\/zsh/" /etc/passwd
+sudo sed -i "s/\/home\/$USER:\/bin\/bash/\/home\/$USER:\/bin\/zsh/" /etc/passwd
 zsh
