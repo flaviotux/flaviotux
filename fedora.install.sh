@@ -1,5 +1,7 @@
 #!/bin/bash
 
+ZSH_CUSTOM=$HOME/.oh-my-zsh
+
 # ZSH
 if [ ! -f /bin/zsh ]; then
   echo ""
@@ -37,7 +39,6 @@ if [ ! -x $HOME/.oh-my-zsh ]; then
   echo "Installing Spaceship ZSH theme"
   echo "============================="
   echo ""
-  ZSH_CUSTOM=$HOME/.oh-my-zsh
 
   git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt"
   ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
@@ -72,7 +73,7 @@ if [ ! -f /usr/bin/yarn ]; then
   echo "============================="
   echo ""
 
-  dnf install gcc-c++ make -y
+  sudo dnf install gcc-c++ make -y
 fi
 
 # Write ZSH settings
@@ -91,5 +92,5 @@ echo "Setting ZSH default shell"
 echo "============================="
 echo ""
 
-sudo sed -i "s/\/home\/flavioribeiro:\/bin\/bash/\/home\/flavioribeiro:\/bin\/zsh/" /etc/passwd
+sudo sed -i "s/\/home\/$USER:\/bin\/bash/\/home\/$USER:\/bin\/zsh/" /etc/passwd
 zsh
