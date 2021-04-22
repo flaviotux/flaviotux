@@ -176,33 +176,33 @@ font:
 #draw_bold_text_with_bright_colors: false
 
 # Colors (Github Theme Dark)
-colors:
+#colors:
   # Default colors
-  primary:
-    background: '#090c10'
-    foreground: '#8b949e'
+#  primary:
+#    background: '#090c10'
+#    foreground: '#8b949e'
 
   # Normal colors
-  normal:
-    black:   '#0d1117'
-    blue:    '#58a6ff'
-    cyan:    '#76e3ea'
-    green:   '#3fb950'
-    magenta: '#bc8cff'
-    red:     '#ff7b72'
-    white:   '#b1bac4'
-    yellow:  '#d29922'
+#  normal:
+#    black:   '#0d1117'
+#    blue:    '#58a6ff'
+#    cyan:    '#76e3ea'
+#    green:   '#3fb950'
+#    magenta: '#bc8cff'
+#    red:     '#ff7b72'
+#    white:   '#b1bac4'
+#    yellow:  '#d29922'
 
   # Bright colors
-  bright:
-    black:   '#161b22'
-    blue:    '#79c0ff'
-    cyan:    '#b3f0ff'
-    green:   '#56d364'
-    magenta: '#d2a8ff'
-    red:     '#ffa198'
-    white:   '#b1bac4'
-    yellow:  '#e3b341'
+#  bright:
+#    black:   '#161b22'
+#    blue:    '#79c0ff'
+#    cyan:    '#b3f0ff'
+#    green:   '#56d364'
+#    magenta: '#d2a8ff'
+#    red:     '#ffa198'
+#    white:   '#b1bac4'
+#    yellow:  '#e3b341'
 
 # Colors (Tomorrow Night)
 #colors:
