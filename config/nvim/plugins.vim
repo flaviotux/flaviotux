@@ -69,12 +69,16 @@ Plug 'othree/javascript-libraries-syntax.vim'
 " Improved syntax highlighting and indentation
 Plug 'othree/yajs.vim'
 
+" Syntax highlighting for graphql
+Plug 'jparise/vim-graphql'
+
 " === UI === "
 " File explorer
 Plug 'scrooloose/nerdtree'
 
 " Colorscheme
 Plug 'mhartington/oceanic-next'
+Plug 'ayu-theme/ayu-vim'
 
 " Customized vim status line
 Plug 'vim-airline/vim-airline'

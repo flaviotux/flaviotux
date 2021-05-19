@@ -312,10 +312,11 @@ endfunction
 
 " Editor theme
 set background=dark
+let ayucolor="dark"
 try
-  colorscheme OceanicNext
+  colorscheme ayu
 catch
-  colorscheme slate
+  colorscheme OceanicNext
 endtry
 " ============================================================================ "
 " ===                             KEY MAPPINGS                             === "
