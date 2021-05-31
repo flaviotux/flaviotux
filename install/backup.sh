@@ -1,12 +1,10 @@
 #!/usr/bin/env bash
-INSTALLDIR=$PWD
-
 echo "---------------------------------------------------------"
 echo "$(tput setaf 2)Alfred: Backup up current files.$(tput sgr 0)"
 echo "---------------------------------------------------------"
 
 # Backup files that are provided by the Jarvis into a ~/$INSTALLDIR-backup directory
-BACKUP_DIR=$INSTALLDIR/backup
+BACKUP_DIR=$PWD/backup
 
 set -e # Exit immediately if a command exits with a non-zero status.
 
