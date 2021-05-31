@@ -85,7 +85,7 @@ echo "============================="
 echo ""
 
 
-curl https://gist.githubusercontent.com/flaviotux/f53f1c67c8c27567f01456c3098bf27f/raw/89a29fb30e6f954cdb04d53e07943d5e685a8974/.zshrc > $HOME/.zshrc
+curl https://gist.githubusercontent.com/flaviotux/f53f1c67c8c27567f01456c3098bf27f/raw/1bad66683e74b04cba3abcbd8e254ed9a363b87f/.zshrc > $HOME/.zshrc
 
 echo ""
 echo "============================="
