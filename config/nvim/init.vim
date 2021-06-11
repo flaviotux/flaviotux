@@ -236,7 +236,7 @@ let g:signify_sign_delete = '-'
 set termguicolors
 
 " Vim airline theme
-let g:airline_theme='space'
+let g:airline_theme='ayu'
 
 " Change vertical split character to be a space (essentially hide it)
 set fillchars+=vert:.
