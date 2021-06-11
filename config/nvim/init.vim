@@ -124,7 +124,7 @@ catch
   echo 'Denite not installed. It should work after running :PlugInstall'
 endtry
 
-" === Coc.nvim === "
+" === .nvim === "
 " use <tab> for trigger completion and navigate to next complete item
 function! s:check_back_space() abort
   let col = col('.') - 1
@@ -134,7 +134,7 @@ endfunction
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
+      \ #refresh()
 
 "Close preview window when completion is done.
 autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
@@ -170,7 +170,7 @@ try
 
 " === Vim airline ==== "
 " Enable extensions
-let g:airline_extensions = ['branch', 'hunks', 'coc']
+let g:airline_extensions = ['branch', 'hunks', '']
 
 " Update section z to just have line number
 let g:airline_section_z = airline#section#create(['linenr'])
@@ -263,10 +263,10 @@ function! TrailingSpaceHighlights() abort
 endfunction
 
 function! s:custom_jarvis_colors()
-  " coc.nvim color changes
-  hi link CocErrorSign WarningMsg
-  hi link CocWarningSign Number
-  hi link CocInfoSign Type
+  " .nvim color changes
+  hi link ErrorSign WarningMsg
+  hi link WarningSign Number
+  hi link InfoSign Type
 
   " Make background transparent for many things
   hi Normal ctermbg=NONE guibg=NONE
@@ -407,15 +407,15 @@ nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
 
-" === coc.nvim === "
+" === .nvim === "
 "   <leader>dd    - Jump to definition of current symbol
 "   <leader>dr    - Jump to references of current symbol
 "   <leader>dj    - Jump to implementation of current symbol
 "   <leader>ds    - Fuzzy search current project symbols
-nmap <silent> <leader>dd <Plug>(coc-definition)
-nmap <silent> <leader>dr <Plug>(coc-references)
-nmap <silent> <leader>dj <Plug>(coc-implementation)
-nnoremap <silent> <leader>ds :<C-u>CocList -I -N --top symbols<CR>
+nmap <silent> <leader>dd <Plug>(-definition)
+nmap <silent> <leader>dr <Plug>(-references)
+nmap <silent> <leader>dj <Plug>(-implementation)
+nnoremap <silent> <leader>ds :<C-u>List -I -N --top symbols<CR>
 
 " === vim-better-whitespace === "
 "   <leader>y - Automatically remove trailing whitespace
