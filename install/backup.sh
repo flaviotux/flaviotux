@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
+INSTALLDIR=$PWD
+
 echo "---------------------------------------------------------"
 echo "$(tput setaf 2)Alfred: Backup up current files.$(tput sgr 0)"
 echo "---------------------------------------------------------"
 
-# Backup files that are provided by the Jarvis into a ~/$INSTALLDIR-backup directory
-BACKUP_DIR=$PWD/backup
+# Backup files that are provided by the Alfred into a ~/$INSTALLDIR-backup directory
+BACKUP_DIR=$INSTALLDIR/backup
 
 set -e # Exit immediately if a command exits with a non-zero status.
 
@@ -13,7 +15,15 @@ echo "$(tput setaf 2)Alfred: Creating backup directory at $BACKUP_DIR.$(tput sgr
 echo "---------------------------------------------------------"
 mkdir -p $BACKUP_DIR
 
-files=("$HOME/.config/nvim" "$HOME/.config/alacritty" "$HOME/.zshrc" "$HOME/.tmux.conf")
+files=(
+    "$HOME/.config/nvim"
+    "$HOME/.config/alacritty"
+    "$HOME/.zshrc"
+    "$HOME/.tmux.conf"
+    "$HOME/.p10k.zsh"
+    "$HOME/.gitignore"
+    "$HOME/.gitconfig"
+)
 for filename in "${files[@]}"; do
     if [ ! -L $filename ]; then
       echo "---------------------------------------------------------"
