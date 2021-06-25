@@ -70,16 +70,16 @@ else
   echo "---------------------------------------------------------"
 fi
 
-if [ -d "$ZSH_CUSTOM/themes/spaceship-prompt" ]; then
+if [ -d "$ZSH_CUSTOM/themes/powerlevel10k" ]; then
   echo "---------------------------------------------------------"
-  echo "$(tput setaf 2)Alfred: spaceship-prompt already installed.$(tput sgr 0)"
+  echo "$(tput setaf 2)Alfred: powerlevel10k already installed.$(tput sgr 0)"
   echo "---------------------------------------------------------"
 else
   echo "---------------------------------------------------------"
-  echo "$(tput setaf 2)Alfred: Installing spaceship-prompt.$(tput sgr 0)"
+  echo "$(tput setaf 2)Alfred: Installing powerlevel10k.$(tput sgr 0)"
   echo "---------------------------------------------------------"
-  git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt"
-  ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
+  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+
 fi
 
 echo "---------------------------------------------------------"
@@ -99,14 +99,6 @@ echo "---------------------------------------------------------"
 echo "$(tput setaf 2)Alfred: Installing Space vim-airline theme.$(tput sgr 0)"
 echo "---------------------------------------------------------"
 cp ~/.config/nvim/space.vim ~/.config/nvim/plugged/vim-airline-themes/autoload/airline/themes/space.vim
-
-if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
-  echo "---------------------------------------------------------"
-  echo "$(tput setaf 2)Alfred: Installing tmux plugin manager.$(tput sgr 0)"
-  echo "---------------------------------------------------------"
-  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-  ~/.tmux/plugins/tpm/scripts/install_plugins.sh
-fi
 
 echo "---------------------------------------------------------"
 echo "$(tput setaf 2)Alfred: Switching shell to zsh. You may need to logout.$(tput sgr 0)"
