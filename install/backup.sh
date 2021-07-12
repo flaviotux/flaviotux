@@ -25,7 +25,7 @@ files=(
     "$HOME/.gitconfig"
 )
 for filename in "${files[@]}"; do
-    if [ ! -L $filename ]; then
+    if [ -e $filename ]; then
       echo "---------------------------------------------------------"
       echo "$(tput setaf 2)Alfred: Backing up $filename.$(tput sgr 0)"
       echo "---------------------------------------------------------"
