@@ -7,8 +7,25 @@ ZSH_CUSTOM=$HOME/.oh-my-zsh
 echo "---------------------------------------------------------"
 echo "$(tput setaf 2)Alfred: Installing system packages.$(tput sgr 0)"
 echo "---------------------------------------------------------"
-sudo dnf install git tmux neovim python3 zsh zsh-syntax-highlighting zsh-autosuggestions exa starship ripgrep fzf z gcc-c++ make -y
+sudo apt install git tmux neovim python3 zsh zsh-syntax-highlighting zsh-autosuggestions ripgrep fzf gcc g++ make -y
 
+echo "---------------------------------------------------------"
+echo "$(tput setaf 2)Alfred: Checking for Z Script installation.$(tput sgr 0)"
+echo "---------------------------------------------------------"
+if [ -f "$HOME/.z" ]; then
+  echo "---------------------------------------------------------"
+  echo "$(tput setaf 2)Alfred: Z Script is installed.$(tput sgr 0)"
+  echo "---------------------------------------------------------"
+else
+  echo "---------------------------------------------------------"
+  echo "$(tput setaf 3)Alfred: Installing Z script.$(tput sgr 0)"
+  echo "---------------------------------------------------------"
+  wget https://raw.githubusercontent.com/rupa/z/v1.11/z.sh -O ~/.z
+fi
+
+echo "---------------------------------------------------------"
+echo "$(tput setaf 2)Alfred: Checking for NVM installation.$(tput sgr 0)"
+echo "---------------------------------------------------------"
 if [ -d "$HOME/.nvm" ]; then
   echo "---------------------------------------------------------"
   echo "$(tput setaf 2)Alfred: NVM is installed.$(tput sgr 0)"
@@ -31,8 +48,9 @@ else
   echo "---------------------------------------------------------"
   echo "$(tput setaf 3)Alfred: Installing Yarn.$(tput sgr 0)"
   echo "---------------------------------------------------------"
-  curl --silent --location https://dl.yarnpkg.com/rpm/yarn.repo | sudo tee /etc/yum.repos.d/yarn.repo
-  sudo dnf --setopt=install_weak_deps=False install yarn -y
+  curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+  sudo add-apt-repository "deb https://dl.yarnpkg.com/debian/ stable main"
+  sudo apt install yarn -y
   yarn config set prefix $HOME/.yarn
 fi
 
@@ -56,9 +74,14 @@ echo "$(tput setaf 2)Alfred: Installing bash language server$(tput sgr 0)"
 echo "---------------------------------------------------------"
 yarn global add bash-language-server
 
-# Create backup folder if it doesn't exist
+echo "---------------------------------------------------------"
+echo "$(tput setaf 2)Alfred: Creating NVIM backup directory.$(tput sgr 0)"
+echo "---------------------------------------------------------"
 mkdir -p ~/.local/share/nvim/backup
 
+echo "---------------------------------------------------------"
+echo "$(tput setaf 2)Alfred: Checking for oh-my-zsh installation.$(tput sgr 0)"
+echo "---------------------------------------------------------"
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
   echo "---------------------------------------------------------"
   echo "$(tput setaf 2)Alfred: Installing oh-my-zsh.$(tput sgr 0)"
@@ -70,18 +93,6 @@ else
   echo "---------------------------------------------------------"
 fi
 
-if [ -d "$ZSH_CUSTOM/themes/powerlevel10k" ]; then
-  echo "---------------------------------------------------------"
-  echo "$(tput setaf 2)Alfred: powerlevel10k already installed.$(tput sgr 0)"
-  echo "---------------------------------------------------------"
-else
-  echo "---------------------------------------------------------"
-  echo "$(tput setaf 2)Alfred: Installing powerlevel10k.$(tput sgr 0)"
-  echo "---------------------------------------------------------"
-  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-
-fi
-
 echo "---------------------------------------------------------"
 echo "$(tput setaf 2)Alfred: Installing vtop.$(tput sgr 0)"
 echo "---------------------------------------------------------"
@@ -90,15 +101,10 @@ yarn global add vtop
 echo "---------------------------------------------------------"
 echo "$(tput setaf 2)Alfred: Installing Neovim plugins and linking dotfiles.$(tput sgr 0)"
 echo "---------------------------------------------------------"
-source install/backup.sh
-source install/link.sh
+bash install/backup.sh
+bash install/link.sh
 nvim +PlugInstall +qall
 nvim +UpdateRemotePlugins +qall
-
-echo "---------------------------------------------------------"
-echo "$(tput setaf 2)Alfred: Installing Space vim-airline theme.$(tput sgr 0)"
-echo "---------------------------------------------------------"
-cp ~/.config/nvim/space.vim ~/.config/nvim/plugged/vim-airline-themes/autoload/airline/themes/space.vim
 
 echo "---------------------------------------------------------"
 echo "$(tput setaf 2)Alfred: Switching shell to zsh. You may need to logout.$(tput sgr 0)"
