@@ -4,6 +4,8 @@ source ~/.config/nvim/plugins.vim
 " ============================================================================ "
 " ===                           EDITING OPTIONS                            === "
 " ============================================================================ "
+" Open multiple buffers
+set hidden
 
 " Remap leader key to ,
 let g:mapleader=','
@@ -178,8 +180,18 @@ let g:airline_section_z = airline#section#create(['linenr'])
 " Do not draw separators for empty sections (only for the active window) >
 let g:airline_skip_empty_sections = 1
 
+" enable tabline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ''
+let g:airline#extensions#tabline#left_alt_sep = ''
+let g:airline#extensions#tabline#right_sep = ''
+let g:airline#extensions#tabline#right_alt_sep = ''
+
+" Always show tabs
+set showtabline=2
+
 " Smartly uniquify buffers names with similar filename, suppressing common parts of paths.
-let g:airline#extensions#tabline#formatter = 'unique_tail'
+" let g:airline#extensions#tabline#formatter = 'unique_tail'
 
 " Custom setup that removes filetype/whitespace from default vim airline bar
 let g:airline#extensions#default#layout = [['a', 'b', 'c'], ['x', 'z', 'warning', 'error']]
@@ -202,6 +214,14 @@ let g:airline_highlighting_cache = 1
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
+
+" airline symbols
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
 
 " Don't show git changes to current file in airline
 let g:airline#extensions#hunks#enabled=0
@@ -236,7 +256,7 @@ let g:signify_sign_delete = '-'
 set termguicolors
 
 " Vim airline theme
-let g:airline_theme='ayu'
+let g:airline_theme='nord'
 
 " Change vertical split character to be a space (essentially hide it)
 set fillchars+=vert:.
@@ -312,12 +332,13 @@ endfunction
 
 " Editor theme
 set background=dark
-let ayucolor="dark"
 try
-  colorscheme ayu
+  colorscheme nord
 catch
-  colorscheme OceanicNext
+  let ayucolor="dark"
+  colorscheme ayu
 endtry
+
 " ============================================================================ "
 " ===                             KEY MAPPINGS                             === "
 " ============================================================================ "
@@ -416,7 +437,6 @@ nmap <silent> <leader>dd <Plug>(-definition)
 nmap <silent> <leader>dr <Plug>(-references)
 nmap <silent> <leader>dj <Plug>(-implementation)
 nnoremap <silent> <leader>ds :<C-u>List -I -N --top symbols<CR>
-
 " === vim-better-whitespace === "
 "   <leader>y - Automatically remove trailing whitespace
 nmap <leader>y :StripWhitespace<CR>

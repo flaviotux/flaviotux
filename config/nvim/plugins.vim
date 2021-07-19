@@ -77,8 +77,7 @@ Plug 'jparise/vim-graphql'
 Plug 'scrooloose/nerdtree'
 
 " Colorscheme
-Plug 'mhartington/oceanic-next'
-Plug 'ayu-theme/ayu-vim'
+Plug 'arcticicestudio/nord-vim'
 
 " Customized vim status line
 Plug 'vim-airline/vim-airline'
