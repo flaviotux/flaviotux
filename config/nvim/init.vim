@@ -181,14 +181,14 @@ let g:airline_section_z = airline#section#create(['linenr'])
 let g:airline_skip_empty_sections = 1
 
 " enable tabline
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = ''
-let g:airline#extensions#tabline#left_alt_sep = ''
-let g:airline#extensions#tabline#right_sep = ''
-let g:airline#extensions#tabline#right_alt_sep = ''
+"let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#tabline#left_sep = ''
+"let g:airline#extensions#tabline#left_alt_sep = ''
+"let g:airline#extensions#tabline#right_sep = ''
+"let g:airline#extensions#tabline#right_alt_sep = ''
 
 " Always show tabs
-set showtabline=2
+" set showtabline=2
 
 " Smartly uniquify buffers names with similar filename, suppressing common parts of paths.
 " let g:airline#extensions#tabline#formatter = 'unique_tail'
