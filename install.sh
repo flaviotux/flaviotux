@@ -7,7 +7,7 @@ ZSH_CUSTOM=$HOME/.oh-my-zsh
 echo "---------------------------------------------------------"
 echo "$(tput setaf 2)Alfred: Installing system packages.$(tput sgr 0)"
 echo "---------------------------------------------------------"
-sudo dnf install git tmux neovim python3 zsh zsh-syntax-highlighting zsh-autosuggestions ripgrep fzf z gcc-c++ make -y
+sudo dnf install git tmux neovim python3 zsh zsh-syntax-highlighting zsh-autosuggestions exa starship ripgrep fzf z gcc-c++ make -y
 
 if [ -d "$HOME/.nvm" ]; then
   echo "---------------------------------------------------------"
