@@ -94,6 +94,12 @@ else
 fi
 
 echo "---------------------------------------------------------"
+echo "$(tput setaf 2)Alfred: Installing FiraMono Nerd Font.$(tput sgr 0)"
+echo "---------------------------------------------------------"
+mkdir -p ~/.fonts
+wget https://github.com/ryanoasis/nerd-fonts/raw/v2.1.0/patched-fonts/FiraMono/Regular/complete/Fira%20Mono%20Regular%20Nerd%20Font%20Complete.otf -P ~/.fonts/
+
+echo "---------------------------------------------------------"
 echo "$(tput setaf 2)Alfred: Installing vtop.$(tput sgr 0)"
 echo "---------------------------------------------------------"
 yarn global add vtop
