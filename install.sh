@@ -7,12 +7,12 @@ ZSH_CUSTOM=$HOME/.oh-my-zsh
 echo "---------------------------------------------------------"
 echo "$(tput setaf 2)Alfred: Installing system packages.$(tput sgr 0)"
 echo "---------------------------------------------------------"
-sudo apt install git tmux neovim python3 zsh zsh-syntax-highlighting zsh-autosuggestions ripgrep fzf gcc g++ make -y
+sudo apt install nodejs git tmux neovim python3 zsh zsh-syntax-highlighting zsh-autosuggestions ripgrep fzf exa gcc g++ make -y
 
 echo "---------------------------------------------------------"
 echo "$(tput setaf 2)Alfred: Checking for Z Script installation.$(tput sgr 0)"
 echo "---------------------------------------------------------"
-if [ -f "$HOME/.z" ]; then
+if [ -f "$HOME/.z.sh" ]; then
   echo "---------------------------------------------------------"
   echo "$(tput setaf 2)Alfred: Z Script is installed.$(tput sgr 0)"
   echo "---------------------------------------------------------"
@@ -20,7 +20,35 @@ else
   echo "---------------------------------------------------------"
   echo "$(tput setaf 3)Alfred: Installing Z script.$(tput sgr 0)"
   echo "---------------------------------------------------------"
-  wget https://raw.githubusercontent.com/rupa/z/v1.11/z.sh -O ~/.z
+  wget https://raw.githubusercontent.com/rupa/z/v1.11/z.sh -O ~/.z.sh
+fi
+
+echo "---------------------------------------------------------"
+echo "$(tput setaf 2)Alfred: Checking for starship prompt installation.$(tput sgr 0)"
+echo "--------------------------------------------------------"
+if [ -f "/usr/local/bin/starship" ]; then
+  echo "---------------------------------------------------------"
+  echo "$(tput setaf 2)Alfred: starship prompt is installed.$(tput sgr 0)"
+  echo "---------------------------------------------------------"
+else
+  echo "---------------------------------------------------------"
+  echo "$(tput setaf 3)Alfred: Installing starship prompt.$(tput sgr 0)"
+  echo "---------------------------------------------------------"
+  sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --yes
+fi
+
+echo "---------------------------------------------------------"
+echo "$(tput setaf 2)Alfred: Checking for tmux-plugins tpm installation.$(tput sgr 0)"
+echo "--------------------------------------------------------"
+if [ -d "$HOME/.tmux" ]; then
+  echo "---------------------------------------------------------"
+  echo "$(tput setaf 2)Alfred: tmux-plugins tpm is installed.$(tput sgr 0)"
+  echo "---------------------------------------------------------"
+else
+  echo "---------------------------------------------------------"
+  echo "$(tput setaf 3)Alfred: Installing tmux-plugins tpm.$(tput sgr 0)"
+  echo "---------------------------------------------------------"
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 fi
 
 echo "---------------------------------------------------------"
@@ -48,9 +76,7 @@ else
   echo "---------------------------------------------------------"
   echo "$(tput setaf 3)Alfred: Installing Yarn.$(tput sgr 0)"
   echo "---------------------------------------------------------"
-  curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-  sudo add-apt-repository "deb https://dl.yarnpkg.com/debian/ stable main"
-  sudo apt install yarn -y
+  npm i --global yarn
   yarn config set prefix $HOME/.yarn
 fi
 
@@ -96,8 +122,8 @@ fi
 echo "---------------------------------------------------------"
 echo "$(tput setaf 2)Alfred: Installing FiraMono Nerd Font.$(tput sgr 0)"
 echo "---------------------------------------------------------"
-mkdir -p ~/.fonts
-wget https://github.com/ryanoasis/nerd-fonts/raw/v2.1.0/patched-fonts/FiraMono/Regular/complete/Fira%20Mono%20Regular%20Nerd%20Font%20Complete.otf -P ~/.fonts/
+mkdir -p ~/.local/share/fonts/OTF/FiraMonoNerdFont/
+curl -fLo ~/.local/share/fonts/OTF/FiraMonoNerdFont/FiraMonoNerdFont-Regular.otf  https://github.com/ryanoasis/nerd-fonts/raw/v2.1.0/patched-fonts/FiraMono/Regular/complete/Fira%20Mono%20Regular%20Nerd%20Font%20Complete.otf
 
 echo "---------------------------------------------------------"
 echo "$(tput setaf 2)Alfred: Installing vtop.$(tput sgr 0)"
