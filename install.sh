@@ -21,6 +21,20 @@ else
 fi
 
 echo "---------------------------------------------------------"
+echo "$(tput setaf 2)Alfred: Checking for tmux-plugins tpm installation.$(tput sgr 0)"
+echo "--------------------------------------------------------"
+if [ -d "$HOME/.tmux" ]; then
+  echo "---------------------------------------------------------"
+  echo "$(tput setaf 2)Alfred: tmux-plugins tpm is installed.$(tput sgr 0)"
+  echo "---------------------------------------------------------"
+else
+  echo "---------------------------------------------------------"
+  echo "$(tput setaf 3)Alfred: Installing tmux-plugins tpm.$(tput sgr 0)"
+  echo "---------------------------------------------------------"
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+fi
+
+echo "---------------------------------------------------------"
 echo "$(tput setaf 2)Alfred: Checking for Yarn installation.$(tput sgr 0)"
 echo "---------------------------------------------------------"
 if [ -f "/usr/bin/yarn" ]; then
@@ -35,6 +49,12 @@ else
   sudo dnf install yarn -y
   yarn config set prefix $HOME/.yarn
 fi
+
+echo "---------------------------------------------------------"
+echo "$(tput setaf 2)Alfred: Installing FiraMono Nerd Font.$(tput sgr 0)"
+echo "---------------------------------------------------------"
+mkdir -p ~/.local/share/fonts/OTF/FiraMonoNerdFont/
+curl -fLo ~/.local/share/fonts/OTF/FiraMonoNerdFont/FiraMonoNerdFont-Regular.otf  https://github.com/ryanoasis/nerd-fonts/raw/v2.1.0/patched-fonts/FiraMono/Regular/complete/Fira%20Mono%20Regular%20Nerd%20Font%20Complete.otf
 
 echo "---------------------------------------------------------"
 echo "$(tput setaf 2)Alfred: Installing Python NeoVim client.$(tput sgr 0)"

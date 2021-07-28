@@ -15,7 +15,16 @@ set $mod Mod4
 # is used in the bar {} block below.
 font pango:monospace 8
 
-for_window [class="^.*"] border pixel 2
+output HDMI-A-1 pos 0 0 res 2560x1080
+output eDP-1 pos 579 1080 res 1366x768
+
+#set $laptop eDP-1
+#bindswitch --reload --locked lid:on output $laptop disable
+#bindswitch --reload --locked lid:off output $laptop enable
+
+exec_always $HOME/.config/sway/lid-state.sh
+
+for_window [class="^.*"] border pixel 1
 
 #colors:                border  backgr. text    ind.
 client.focused          #5e81ac #5e81ac #ffffff #5e81ac
@@ -51,7 +60,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec gnome-sensible-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
