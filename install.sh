@@ -7,7 +7,7 @@ ZSH_CUSTOM=$HOME/.oh-my-zsh
 echo "---------------------------------------------------------"
 echo "$(tput setaf 2)Alfred: Installing system packages.$(tput sgr 0)"
 echo "---------------------------------------------------------"
-sudo apt install nodejs git tmux neovim python3 zsh zsh-syntax-highlighting zsh-autosuggestions ripgrep fzf exa gcc g++ make -y
+sudo apt install nodejs git tmux neovim python3 zsh zsh-syntax-highlighting zsh-autosuggestions ripgrep fzf gcc g++ make -y
 
 echo "---------------------------------------------------------"
 echo "$(tput setaf 2)Alfred: Checking for Z Script installation.$(tput sgr 0)"

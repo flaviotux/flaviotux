@@ -78,10 +78,12 @@ Plug 'scrooloose/nerdtree'
 
 " Colorscheme
 Plug 'arcticicestudio/nord-vim'
+Plug 'ayu-theme/ayu-vim'
 
 " Customized vim status line
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'edkolev/tmuxline.vim'
 
 " Icons
 Plug 'ryanoasis/vim-devicons'
