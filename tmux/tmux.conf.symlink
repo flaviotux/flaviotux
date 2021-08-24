@@ -5,6 +5,8 @@
 # Set nord theme
 set -g @plugin "arcticicestudio/nord-tmux"
 
+source ~/.tmux.theme.conf
+
 # Set tmux to display in 256 colors
 set -g default-terminal    "screen-256color"
 set -ga terminal-overrides ",xterm-256color:Tc"

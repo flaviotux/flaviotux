@@ -7,7 +7,7 @@ ZSH_CUSTOM=$HOME/.oh-my-zsh
 echo "---------------------------------------------------------"
 echo "$(tput setaf 2)Alfred: Installing system packages.$(tput sgr 0)"
 echo "---------------------------------------------------------"
-sudo apt install nodejs git tmux neovim python3 zsh zsh-syntax-highlighting zsh-autosuggestions ripgrep fzf gcc g++ make -y
+sudo apt install nodejs git tmux neovim python3 python3-pip zsh zsh-syntax-highlighting zsh-autosuggestions ripgrep fzf exa gcc g++ make -y
 
 echo "---------------------------------------------------------"
 echo "$(tput setaf 2)Alfred: Checking for Z Script installation.$(tput sgr 0)"
@@ -117,6 +117,20 @@ else
   echo "---------------------------------------------------------"
   echo "$(tput setaf 2)Alfred: oh-my-zsh already installed.$(tput sgr 0)"
   echo "---------------------------------------------------------"
+fi
+
+echo "---------------------------------------------------------"
+echo "$(tput setaf 2)Alfred: Checking for pyenv installation.$(tput sgr 0)"
+echo "---------------------------------------------------------"
+if [ -d "$HOME/.pyenv" ]; then
+  echo "---------------------------------------------------------"
+  echo "$(tput setaf 2)Alfred: pyenv is installed.$(tput sgr 0)"
+  echo "---------------------------------------------------------"
+else
+  echo "---------------------------------------------------------"
+  echo "$(tput setaf 3)Alfred: Installing pyenv.$(tput sgr 0)"
+  echo "---------------------------------------------------------"
+  curl https://pyenv.run | bash
 fi
 
 echo "---------------------------------------------------------"
