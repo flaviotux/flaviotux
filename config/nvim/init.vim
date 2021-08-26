@@ -253,7 +253,7 @@ let g:signify_sign_delete = '-'
 set termguicolors
 
 " Vim airline theme
-let g:airline_theme='ayu'
+let g:airline_theme='nord'
 
 " Change vertical split character to be a space (essentially hide it)
 set fillchars+=vert:.
@@ -312,7 +312,7 @@ function! s:custom_jarvis_colors()
 endfunction
 
 autocmd! ColorScheme * call TrailingSpaceHighlights()
-autocmd! ColorScheme ayu call s:custom_jarvis_colors()
+autocmd! ColorScheme * call s:custom_jarvis_colors()
 
 " Call method on window enter
 augroup WindowManagement
@@ -328,8 +328,8 @@ function! Handle_Win_Enter()
 endfunction
 
 " Editor theme
-let ayucolor="dark"
-colorscheme ayu
+let background="dark"
+colorscheme nord
 
 " ============================================================================ "
 " ===                             KEY MAPPINGS                             === "

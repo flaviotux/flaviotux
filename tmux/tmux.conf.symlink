@@ -2,9 +2,7 @@
 # ***    DISPLAY   *** #
 ########################
 
-# Set nord theme
-set -g @plugin "arcticicestudio/nord-tmux"
-
+# Load Tmux Theme
 source ~/.tmux.theme.conf
 
 # Set tmux to display in 256 colors
@@ -74,6 +72,3 @@ set -g visual-activity on
 
 # Enable status bar
 set-option -g status on
-
-# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
-run '~/.tmux/plugins/tpm/tpm'
