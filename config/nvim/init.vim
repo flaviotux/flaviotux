@@ -315,7 +315,7 @@ function! s:custom_jarvis_colors()
 endfunction
 
 autocmd! ColorScheme * call TrailingSpaceHighlights()
-autocmd! ColorScheme OceanicNext call s:custom_jarvis_colors()
+autocmd! ColorScheme * call s:custom_jarvis_colors()
 
 " Call method on window enter
 augroup WindowManagement
