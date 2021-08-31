@@ -7,7 +7,9 @@ ZSH_CUSTOM=$HOME/.oh-my-zsh
 echo "---------------------------------------------------------"
 echo "$(tput setaf 2)Alfred: Installing system packages.$(tput sgr 0)"
 echo "---------------------------------------------------------"
-sudo apt install nodejs git tmux neovim python3 python3-pip zsh zsh-syntax-highlighting zsh-autosuggestions ripgrep fzf exa gcc g++ make -y
+sudo apt install nodejs git tmux neovim python3 python3-pip zsh \
+zsh-syntax-highlighting zsh-autosuggestions ripgrep fzf exa gcc \
+g++ make build-essential procps curl file git -y
 
 echo "---------------------------------------------------------"
 echo "$(tput setaf 2)Alfred: Checking for Z Script installation.$(tput sgr 0)"
@@ -81,31 +83,6 @@ else
 fi
 
 echo "---------------------------------------------------------"
-echo "$(tput setaf 2)Alfred: Installing Python NeoVim client.$(tput sgr 0)"
-echo "---------------------------------------------------------"
-pip3 install neovim
-
-echo "---------------------------------------------------------"
-echo "$(tput setaf 2)Alfred: Installing node neovim package$(tput sgr 0)"
-echo "---------------------------------------------------------"
-yarn global add neovim
-
-echo "---------------------------------------------------------"
-echo "$(tput setaf 2)Alfred: Installing vim linter (vint)$(tput sgr 0)"
-echo "---------------------------------------------------------"
-pip3 install vim-vint
-
-echo "---------------------------------------------------------"
-echo "$(tput setaf 2)Alfred: Installing bash language server$(tput sgr 0)"
-echo "---------------------------------------------------------"
-yarn global add bash-language-server
-
-echo "---------------------------------------------------------"
-echo "$(tput setaf 2)Alfred: Creating NVIM backup directory.$(tput sgr 0)"
-echo "---------------------------------------------------------"
-mkdir -p ~/.local/share/nvim/backup
-
-echo "---------------------------------------------------------"
 echo "$(tput setaf 2)Alfred: Checking for oh-my-zsh installation.$(tput sgr 0)"
 echo "---------------------------------------------------------"
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
@@ -134,15 +111,55 @@ else
 fi
 
 echo "---------------------------------------------------------"
+echo "$(tput setaf 2)Alfred: Checking for Homebrew installation.$(tput sgr 0)"
+echo "---------------------------------------------------------"
+if [ -d "/home/linuxbrew/.linuxbrew" ]; then
+  echo "---------------------------------------------------------"
+  echo "$(tput setaf 2)Alfred: Homebrew is installed.$(tput sgr 0)"
+  echo "---------------------------------------------------------"
+else
+  echo "---------------------------------------------------------"
+  echo "$(tput setaf 3)Alfred: Installing Homebrew.$(tput sgr 0)"
+  echo "---------------------------------------------------------"
+  CI=1 curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash
+fi
+
+echo "---------------------------------------------------------"
 echo "$(tput setaf 2)Alfred: Installing FiraMono Nerd Font.$(tput sgr 0)"
 echo "---------------------------------------------------------"
 mkdir -p ~/.local/share/fonts/OTF/FiraMonoNerdFont/
-curl -fLo ~/.local/share/fonts/OTF/FiraMonoNerdFont/FiraMonoNerdFont-Regular.otf  https://github.com/ryanoasis/nerd-fonts/raw/v2.1.0/patched-fonts/FiraMono/Regular/complete/Fira%20Mono%20Regular%20Nerd%20Font%20Complete.otf
+curl -fLo ~/.local/share/fonts/OTF/FiraMonoNerdFont/FiraMonoNerdFont-Regular.otf \
+https://github.com/ryanoasis/nerd-fonts/raw/v2.1.0/patched-fonts/FiraMono/Regular/complete/Fira%20Mono%20Regular%20Nerd%20Font%20Complete.otf
+
+echo "---------------------------------------------------------"
+echo "$(tput setaf 2)Alfred: Installing Python NeoVim client.$(tput sgr 0)"
+echo "---------------------------------------------------------"
+pip3 install neovim
+
+echo "---------------------------------------------------------"
+echo "$(tput setaf 2)Alfred: Installing vim linter (vint)$(tput sgr 0)"
+echo "---------------------------------------------------------"
+pip3 install vim-vint
+
+echo "---------------------------------------------------------"
+echo "$(tput setaf 2)Alfred: Installing node neovim package$(tput sgr 0)"
+echo "---------------------------------------------------------"
+yarn global add neovim
+
+echo "---------------------------------------------------------"
+echo "$(tput setaf 2)Alfred: Installing bash language server$(tput sgr 0)"
+echo "---------------------------------------------------------"
+yarn global add bash-language-server
 
 echo "---------------------------------------------------------"
 echo "$(tput setaf 2)Alfred: Installing vtop.$(tput sgr 0)"
 echo "---------------------------------------------------------"
 yarn global add vtop
+
+echo "---------------------------------------------------------"
+echo "$(tput setaf 2)Alfred: Creating NVIM backup directory.$(tput sgr 0)"
+echo "---------------------------------------------------------"
+mkdir -p ~/.local/share/nvim/backup
 
 echo "---------------------------------------------------------"
 echo "$(tput setaf 2)Alfred: Installing Neovim plugins and linking dotfiles.$(tput sgr 0)"
