@@ -102,6 +102,41 @@ else
 fi
 
 echo "---------------------------------------------------------"
+echo "$(tput setaf 2)Alfred: Checking for pyenv installation.$(tput sgr 0)"
+echo "---------------------------------------------------------"
+if [ -d "$HOME/.pyenv" ]; then
+  echo "---------------------------------------------------------"
+  echo "$(tput setaf 2)Alfred: pyenv is installed.$(tput sgr 0)"
+  echo "---------------------------------------------------------"
+else
+  echo "---------------------------------------------------------"
+  echo "$(tput setaf 3)Alfred: Installing pyenv.$(tput sgr 0)"
+  echo "---------------------------------------------------------"
+  curl https://pyenv.run | bash
+fi
+
+echo "---------------------------------------------------------"
+echo "$(tput setaf 2)Alfred: Checking for Homebrew installation.$(tput sgr 0)"
+echo "---------------------------------------------------------"
+if [ -d "/home/linuxbrew/.linuxbrew" ]; then
+  echo "---------------------------------------------------------"
+  echo "$(tput setaf 2)Alfred: Homebrew is installed.$(tput sgr 0)"
+  echo "---------------------------------------------------------"
+else
+  echo "---------------------------------------------------------"
+  echo "$(tput setaf 3)Alfred: Installing Homebrew.$(tput sgr 0)"
+  echo "---------------------------------------------------------"
+  CI=1 curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash
+
+  echo "---------------------------------------------------------"
+  echo "$(tput setaf 3)Alfred: Installing Homebrew dependencies.$(tput sgr 0)"
+  echo "---------------------------------------------------------"
+  sudo dnf groupinstall 'Development Tools'
+  sudo dnf install procps-ng curl file git
+  sudo dnf install libxcrypt-compat # needed by Fedora 30 and up
+fi
+
+echo "---------------------------------------------------------"
 echo "$(tput setaf 2)Alfred: Installing Neovim plugins and linking dotfiles.$(tput sgr 0)"
 echo "---------------------------------------------------------"
 source install/backup.sh

@@ -297,8 +297,8 @@ function! s:custom_jarvis_colors()
   hi StatusLineNC guifg=#16252b guibg=#16252b
 
   " Try to hide vertical spit and end of buffer symbol
-  hi VertSplit gui=NONE guifg=#17252c guibg=#17252c
-  hi EndOfBuffer ctermbg=NONE ctermfg=NONE guibg=#17252c guifg=#17252c
+  hi VertSplit gui=NONE guifg=#17252c guibg=NONE
+  hi EndOfBuffer ctermbg=NONE ctermfg=NONE guibg=NONE guifg=#17252c
 
   " Customize NERDTree directory
   hi NERDTreeCWD guifg=#99c794
@@ -315,7 +315,7 @@ function! s:custom_jarvis_colors()
 endfunction
 
 autocmd! ColorScheme * call TrailingSpaceHighlights()
-autocmd! ColorScheme * call s:custom_jarvis_colors()
+autocmd! ColorScheme nord call s:custom_jarvis_colors()
 
 " Call method on window enter
 augroup WindowManagement

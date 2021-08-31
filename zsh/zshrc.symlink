@@ -140,3 +140,10 @@ source $ZSH/oh-my-zsh.sh
 
 # Set Starship as prompt
 eval "$(starship init zsh)"
+
+# Set homebrew init
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+# Set pyenv init
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
