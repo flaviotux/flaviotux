@@ -1,0 +1,122 @@
+* {
+  font-family: Roboto, Helvetica, Arial, sans-serif, Fira Code Nerd Font;
+  font-size: 12px;
+  border-radius: 0;
+}
+
+window#waybar {
+  background-color: #4c566a;
+}
+
+#clock,
+#pulseaudio,
+#tray,
+#language,
+#window,
+#cpu,
+#memory,
+#battery,
+#bat2,
+#network,
+#backlight,
+#custom-pacman,
+#custom-vpn,
+#custom-media
+{
+  color: #ECEFF4;
+  padding: 0 10px;
+  margin: 0;
+}
+
+#clock,
+#tray
+{
+  background-color: #3B4252;
+}
+
+#language,
+#battery,
+#bat2,
+#network,
+#backlight,
+#custom-vpn,
+#custom-pacman {
+  background-color: #434C5E;
+}
+
+#window {
+  background-color: #3B4252;
+  color: #ECEFF4;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-top: 4px;
+}
+
+#window label {
+  font-size: 0;
+}
+
+#window.empty {
+  padding: 0;
+}
+
+#workspaces button {
+  padding: 0 10px;
+  color: rgba(76, 86, 106, 0.5);
+  background-color: #88C0D0;
+  font-size: x-large;
+}
+
+#workspaces button:hover {
+  color: #2E3440;
+  text-shadow: none;
+  background: #88C0D0;
+  box-shadow: none;
+  border-color: transparent;
+}
+
+#workspaces button.focused {
+  color: #2E3440;
+}
+
+#workspaces button.urgent {
+  color:  #BF616A;
+}
+
+#custom-right,
+#custom-right2,
+#custom-left,
+#custom-left2,
+#custom-left3,
+#custom-left4
+{
+  font-size: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+#custom-right {
+  background-color: #3B4252; 
+  color: #88C0D0;
+}
+
+#custom-right2 {
+  color: #3B4252; 
+}
+
+#custom-left {
+  color: #3B4252;
+  background-color: #434C5E;
+}
+
+#custom-left2, #custom-left4 {
+  color: #ECEFF4;
+}
+
+#custom-left3 {
+  color: #434C5E;
+}
+
+#custom-left4 {
+  background-color: #3B4252;
+}

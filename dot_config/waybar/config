@@ -1,0 +1,223 @@
+{
+    "layer": "top",
+    // "position": "bottom",
+    "height": 25,
+    "margin-left": 7,
+    "margin-right": 7,
+    "margin-top": 7,
+    "margin-bottom": 0,
+
+    // "width": 1280,
+
+    "modules-left": [
+        "sway/workspaces",
+        "custom/right",
+        "sway/window",
+        "custom/right2",
+        "custom/media"
+    ],
+
+    "modules-center": [],
+
+    "modules-right": [
+        "pulseaudio",
+        "custom/left2",
+        "memory",
+        "custom/left2",
+        "cpu",
+        "custom/left3",
+        "custom/vpn",
+        "network",
+        "sway/language",
+        "battery",
+        "battery#bat2",
+        "custom/left",
+        "clock",
+        "tray"
+    ],
+
+    "sway/workspaces": {
+        "disable-scroll": false,
+        "all-outputs": true,
+        "format": "{icon}", 
+        "format-icons": {
+            "1": "",
+            "2": "",
+            "3": "﬏",
+            "4": "聆",
+            "5": "阮",
+            "urgent": "",
+            "focused": "",
+            "default": ""
+        }
+    },
+
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+
+
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+    },
+
+    "clock": {
+        "timezone": "America/Sao_Paulo",
+        "interval": 1,
+        "format": "   {:%H:%M:%S}",
+        "format-alt": "    {:%d/%m/%Y}"
+    },
+
+    "cpu": {
+        "format": "   {usage}%",
+        "tooltip": false
+    },
+
+    "memory": {
+        "format": "   {}%"
+    },
+
+    "temperature": {
+        // "thermal-zone": 2,
+        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "critical-threshold": 80,
+        // "format-critical": "{temperatureC}°C {icon}",
+        "format": "{temperatureC}°C   {icon}",
+        "format-icons": ["", "", ""]
+    },
+
+    "backlight": {
+        // "device": "acpi_video1",
+        "format": "{percent}%   {icon}",
+        "format-icons": ["", "", ""]
+    },
+
+	"sway/language": {
+		"format": "    {}",
+		"tooltip": false
+	},
+
+    "battery": {
+        "interval": 30,
+        "format": "{icon}   {capacity}%",
+        "format-charging": "    {capacity}%",
+        "format-plugged": "    {capacity}%",
+        "format-icons": ["", "", "", "", "", "", "", "", "", ""],
+        "states": {
+            "warning": 30,
+            "critical": 15
+        }
+    },
+
+    "battery#bat2": {
+        "bat": "BAT2"
+    },
+
+    "network": {
+        // "interface": "wlp2*",
+        "format-wifi": "     {essid}",
+        "format-ethernet": "{ifname}: {ipaddr}/{cidr}   ",
+        "format-linked": "{ifname} (No IP)   ",
+        "format-disconnected": "Disconnected   ⚠",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{icon}   {volume}%",
+        "format-bluetooth": "{volume}%   {icon}     {format_source}",
+        "format-bluetooth-muted": "0%   {icon}     {format_source}",
+        "format-muted": "   {format_source}",
+        "format-source": "{volume}%   ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+
+    "custom/media": {
+        "format": "{icon}   {}",
+        "return-type": "json",
+        "max-length": 40,
+        "on-click": "playerctl play-pause",
+        "format-icons": {
+            "spotify": "",
+            "default": ""
+        },
+        "escape": true,
+        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
+    },
+
+    "custom/pacman": {
+        "format": "    {}",
+        "interval": 3600,                     // every hour
+        "exec": "checkupdates | wc -l",       // # of updates
+        "exec-if": "exit 0",                  // always run; consider advanced run conditions
+        "on-click": "alacritty -e sudo pacman -Syu; pkill -SIGRTMIN+8 waybar", // update system
+        "signal": 8
+    },
+
+    "custom/vpn": {
+        "format": "   VPN",
+        "exec": "echo '{\"class\": \"connected\"}'",
+        "exec-if": "test -d /proc/sys/net/ipv4/conf/tun0",
+        "return-type": "json",
+        "interval": 5
+    },
+
+    "sway/window": {
+        "format": "{}",
+        "max-length": 40,
+		"tooltip": false,
+        "icon": false
+	},
+
+    "custom/left": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/left2": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/left3": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/left4": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/right": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/right2": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/right3": {
+        "format": "",
+        "tooltip": false
+    }
+}
