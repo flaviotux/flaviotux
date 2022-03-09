@@ -8,6 +8,45 @@ window#waybar {
   background-color: #4c566a;
 }
 
+window#waybar.chromium {
+  background-color: #000000;
+}
+
+.chromium #workspaces button.focused {
+  color: #000000;
+}
+
+.chromium #clock,
+.chromium #tray,
+.chromium #window,
+.chromium #custom-right
+{
+  background-color: #212121;
+}
+
+.chromium #language,
+.chromium #language,
+.chromium #battery,
+.chromium #bat2,
+.chromium #network,
+.chromium #backlight,
+.chromium #custom-vpn,
+.chromium #custom-pacman,
+.chromium #custom-left
+{
+  background-color: #424242;
+}
+
+.chromium #custom-right2,
+.chromium #custom-left
+{
+  color: #212121;
+}
+
+.chromium #custom-left3 {
+  color: #424242;
+}
+
 #clock,
 #pulseaudio,
 #tray,
