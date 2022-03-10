@@ -87,6 +87,8 @@ exec swayidle -w \
 # Read `man 5 sway-input` for more information about this section.
 
 input {
+    * xkb_numlock enable
+
     type:keyboard {
         xkb_layout br
         xkb_variant thinkpad
