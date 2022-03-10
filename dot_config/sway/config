@@ -23,7 +23,7 @@ set $menu dmenu_path | wofi --show=drun -i | xargs swaymsg exec --
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg ~/Pictures/nord-arch.png fill
+output * bg ~/Imagens/nord.jpg fill
 #
 # Example configuration:
 #

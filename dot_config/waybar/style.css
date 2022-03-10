@@ -8,42 +8,42 @@ window#waybar {
   background-color: #4c566a;
 }
 
-window#waybar.chromium {
+window#waybar.google-chrome {
   background-color: #000000;
 }
 
-.chromium #workspaces button.focused {
+.google-chrome #workspaces button.focused {
   color: #000000;
 }
 
-.chromium #clock,
-.chromium #tray,
-.chromium #window,
-.chromium #custom-right
+.google-chrome #clock,
+.google-chrome #tray,
+.google-chrome #window,
+.google-chrome #custom-right
 {
   background-color: #212121;
 }
 
-.chromium #language,
-.chromium #language,
-.chromium #battery,
-.chromium #bat2,
-.chromium #network,
-.chromium #backlight,
-.chromium #custom-vpn,
-.chromium #custom-pacman,
-.chromium #custom-left
+.google-chrome #language,
+.google-chrome #language,
+.google-chrome #battery,
+.google-chrome #bat2,
+.google-chrome #network,
+.google-chrome #backlight,
+.google-chrome #custom-vpn,
+.google-chrome #custom-pacman,
+.google-chrome #custom-left
 {
   background-color: #424242;
 }
 
-.chromium #custom-right2,
-.chromium #custom-left
+.google-chrome #custom-right2,
+.google-chrome #custom-left
 {
   color: #212121;
 }
 
-.chromium #custom-left3 {
+.google-chrome #custom-left3 {
   color: #424242;
 }
 
