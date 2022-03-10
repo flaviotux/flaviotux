@@ -48,7 +48,7 @@ client.urgent           #bf616a #bf616a #ffffff #bf616a
 
 for_window {
     [app_id="Alacritty"] move container to workspace number 1
-    [class="Chromium"] move container to workspace number 2
+    [class="Google-chrome"] move container to workspace number 2
     [class="Code"] move container to workspace number 3
     [class="Slack"] move container to workspace number 4
     [class=¨"Spotify" instance="spotify"] move container to workspace number 5
@@ -279,7 +279,7 @@ bindsym Shift+Ctrl+Print exec grim -o $(swaymsg -t get_outputs | jq -r '.[] | se
 # Executer
 #
 exec mako
-exec slack
+exec flatpak run com.slack.Slack
 
 #
 # Status Bar:

@@ -47,6 +47,16 @@ window#waybar.google-chrome {
   color: #424242;
 }
 
+.google-chrome #custom-right {
+  color: #ECEFF4;
+}
+
+.google-chrome #workspaces button,
+.google-chrome #workspaces button:hover
+{
+  background-color: #ECEFF4;
+}
+
 #clock,
 #pulseaudio,
 #tray,
