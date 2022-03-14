@@ -286,6 +286,7 @@ bindsym Shift+Ctrl+Print exec grim -o $(swaymsg -t get_outputs | jq -r '.[] | se
 #
 exec mako
 exec slack
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
 #
 # Status Bar:

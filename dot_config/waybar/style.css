@@ -51,8 +51,7 @@ window#waybar.google-chrome {
   color: #ECEFF4;
 }
 
-.google-chrome #workspaces button,
-.google-chrome #workspaces button:hover
+.google-chrome #workspaces
 {
   background-color: #ECEFF4;
 }
@@ -109,17 +108,21 @@ window#waybar.google-chrome {
   padding: 0;
 }
 
+#workspaces {
+  background-color: #88C0D0;
+}
+
 #workspaces button {
   padding: 0 10px;
   color: rgba(76, 86, 106, 0.5);
-  background-color: #88C0D0;
+  background-color: transparent;
   font-size: x-large;
 }
 
 #workspaces button:hover {
   color: #2E3440;
   text-shadow: none;
-  background: #88C0D0;
+  background: transparent;
   box-shadow: none;
   border-color: transparent;
 }
