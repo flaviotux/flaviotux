@@ -12,7 +12,7 @@
     <img
       width="256"
       align="right"
-      src="https://api.daily.dev/devcards/a7428450948649e0af1e9fa8ff941a4b.png?r=rqo"
+      src="/devcard.svg"
       alt="Flávio Ribeiro's Dev Card"/>
   </a>
 </div>
