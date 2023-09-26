@@ -1,7 +1,7 @@
 # Hi there 👋
 
 <div align="left">
-  <a href="https://twitter.com/_flaviotux">
+  <a href="https://twitter.com/flaviotux_">
     <img
       src="https://img.shields.io/twitter/follow/flaviotux_?style=social"
       alt="Twitter"
