@@ -17,7 +17,7 @@
   </a>
 </div>
 
-## I'm Flávio Ribeiro
+## I'm Flavio Ribeiro
 
 Enthusiast of technology and lover of React & NodeJS stack.
 
