@@ -2,12 +2,11 @@
 
 <div align="left">
   <a href="https://twitter.com/flaviotux_">
-    <img
-      src="https://img.shields.io/twitter/follow/flaviotux_?style=social"
-      alt="Twitter"
-    />
+    <img alt="X (formerly Twitter) URL" src="https://img.shields.io/twitter/url?url=https%3A%2F%2Ftwitter.com%2Fflaviotux_">
   </a>
-
+  <a href="https://github.com/flaviotux">
+    <img alt="GitHub followers" src="https://img.shields.io/github/followers/flaviotux">
+  </a>
   <a href="https://app.daily.dev/flaviotux">
     <img
       width="256"
@@ -21,6 +20,7 @@
 
 Enthusiast of technology and lover of React & NodeJS stack.
 
+- ☕️ I'm currently working with Node.js, TypeScript, GraphQL Federation, Airflow, PySpark, MongoDB, Docker, and Kubernetes.
 - 🔭 I’m currently working on an incredible team at [luizalabs](https://www.linkedin.com/company/luizalabs)
-- 🌱 I’m currently learning NodeJS, ReactJS, React Native, Typescript, Lerna, Docker and Jest;
+- 🌱 I’m currently learning React Native, HTMX, Go, Kubernetes, and ScyllaDB;
 
