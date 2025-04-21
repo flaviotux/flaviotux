@@ -21,6 +21,6 @@
 Enthusiast of technology and lover of React & NodeJS stack.
 
 - ☕️ I'm currently working with Node.js, TypeScript, GraphQL Federation, Airflow, PySpark, MongoDB, Docker, and Kubernetes.
-- 🔭 I’m currently working on an incredible team at [luizalabs](https://www.linkedin.com/company/luizalabs)
+- 🔭 I’m currently working on an incredible team at [Jusbrasil](https://www.linkedin.com/company/jusbrasil)
 - 🌱 I’m currently learning React Native, HTMX, Go, Kubernetes, and ScyllaDB;
 
